@@ -10,21 +10,32 @@ int	ft_isspace(char c)
 int	ft_atoi(char *str)
 {
 	int	i;
+	int	count_minus;
+	int	result;
 
 	i = 0;
-	while (str[i] != '\0')
+	count_minus = 1;
+	result = 0;
+
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
+		count_minus = -1;
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
-		printf("%d\n", ft_isspace(str[i]));
+		result *= 10;
+		result += str[i] - '0';
 		i++;
 	}
-	return (0);
+	result *= count_minus;
+	return (result);
 }
 
 int	main()
 {
 	char	*str;
 
-	str = "  0123";
-	ft_atoi(str);
+	str = " 0123";
+	printf("ft_atoi result: %d\n", ft_atoi(str));
 	return (0);
 }
