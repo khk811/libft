@@ -4,11 +4,16 @@
 
 int	main()
 {
-	int	*numPtr;
+	int	numPtr[10];
 
-	numPtr = malloc(sizeof(int));
-	memset(numPtr, 7, 4);
-	printf("%d\n", *numPtr);
-	free(numPtr);
+	memset(numPtr, 10, 10 * sizeof(int));
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d ", numPtr[i]);
+		printf(" -> ");
+		printf("address of numPtr: %p\n", numPtr + i);
+	}
+	//free(numPtr);
+	printf("\n");
 	return (0);
 }
