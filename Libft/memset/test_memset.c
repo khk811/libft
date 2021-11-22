@@ -6,7 +6,7 @@ int	main()
 {
 	int	numPtr[10];
 
-	memset(numPtr, 10, 10 * sizeof(int));
+	memset(numPtr, 0, 10 * sizeof(int));
 	for (int i = 0; i < 10; i++)
 	{
 		printf("%d ", numPtr[i]);
