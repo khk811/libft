@@ -12,7 +12,7 @@ void	*ft_memset(void *dest, int c, size_t len)
 	i = 0;
 	casted_c = (unsigned char)c;
 	while (i < len)
-		*(char *)(dest + (i++)) = casted_c;
+		*(unsigned char *)(dest + (i++)) = casted_c;
 	// how the fuck did i write this wft why is this working????
 	return (dest);
 }
@@ -22,12 +22,12 @@ int	main()
 	int	memset_Ptr[10];
 	int	ft_memset_Ptr[10];
 
-	memset(memset_Ptr, 1, 10 * sizeof(int));
-	ft_memset(ft_memset_Ptr, 1, 10 *sizeof(int));
+	memset(memset_Ptr, '0', 10 * sizeof(int));
+	ft_memset(ft_memset_Ptr, '0', 10 * sizeof(int));
 	for (int i = 0; i < 10; i++)
 	{
-		printf("memset: %d ", memset_Ptr[i]);
-		printf("ft_memset: %d\n", ft_memset_Ptr[i]);
+		printf("memset: %c ", memset_Ptr[i]);
+		printf("ft_memset: %c\n", ft_memset_Ptr[i]);
 	}
 	return (0);
 }
