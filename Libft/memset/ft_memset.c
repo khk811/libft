@@ -3,6 +3,7 @@
 
 // https://st-lab.tistory.com/198
 // https://dojang.io/mod/page/view.php?id=552; void pointer as a parameter in a function.
+// https://stackoverflow.com/questions/19707820/memset-not-working
 
 void	*ft_memset(void *dest, int c, size_t len)
 {
@@ -22,12 +23,12 @@ int	main()
 	int	memset_Ptr[10];
 	int	ft_memset_Ptr[10];
 
-	memset(memset_Ptr, '0', 10 * sizeof(int));
-	ft_memset(ft_memset_Ptr, '0', 10 * sizeof(int));
+	memset(memset_Ptr, 1, 10 * sizeof(int));
+	ft_memset(ft_memset_Ptr, 1, 10 * sizeof(int));
 	for (int i = 0; i < 10; i++)
 	{
-		printf("memset: %c ", memset_Ptr[i]);
-		printf("ft_memset: %c\n", ft_memset_Ptr[i]);
+		printf("memset: %d ", memset_Ptr[i]);
+		printf("ft_memset: %d\n", ft_memset_Ptr[i]);
 	}
 	return (0);
 }
