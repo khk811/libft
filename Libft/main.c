@@ -16,5 +16,7 @@ int	main()
     free(resulte);
 	printf("ft_putendl_fd result:\n");
 	ft_putendl_fd(dont_give_up, 1);
+	printf("you're a lucky:\n");
+	ft_putnbr_fd(7, 1);
 	return (0);
 }
