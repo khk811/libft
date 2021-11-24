@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -20,14 +19,3 @@ char	*ft_strdup(char *src)
 	}
 	return (result);
 }
-
-int main()
- {
-	 char    *the_source = "sriracha";
-     char    *resulte;
- 
-     resulte = ft_strdup(the_source);
-     printf("the result: %s\n", resulte);
-     free(resulte);
-     return (0);
- }
