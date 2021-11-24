@@ -6,7 +6,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while ((*(unsigned char *)(s1 + i) != '\0' || *(unsigned char *)(s2 + i) != '\0') && i < n)
+	while (i < n)
 	{
 		if (*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 +i))
 			return (*(unsigned char *)(s1 +i) - *(unsigned char *)(s2 +i));
@@ -29,6 +29,5 @@ int	main()
 	printf("---int---\n");
 	printf("memcmp result: %d\n", memcmp(d1, d2, 16));
 	printf("ft_memcmp result: %d\n", ft_memcmp(d1, d2, 16));
-	// there's something wrong. please check concepts of memory block and byte
 	return (0);
 }
