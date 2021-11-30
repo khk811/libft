@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 /*
  * calloc안에 뭐가 들어가는지 알아야함.
@@ -22,20 +23,15 @@ void	*ft_calloc(size_t count, size_t size)
 	int	i;
 
 	result = (void *)malloc(count * size);
-	while (i < count)
-	{
-		result[i] = 0;
-		i++;
-	}
-	return (result);
+	ft_memset(result, 0, (count * size));
 }
-
 
 int	main()
 {
 	int	*test_calloc;
-	int	i;
+	int	*test_ft_calloc;
 	int	test_size;
+	int	i;
 
 	test_size = 10;
 	test_calloc = (int *)calloc(test_size, sizeof(int));
