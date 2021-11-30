@@ -8,6 +8,8 @@ int	main()
     char    *the_source = "sriracha";
     char    *resulte;
 	char	*dont_give_up = "you can do this";
+	char	paris[35] = "ecole42 et...";
+	char	seoul[10] = "<42Seoul>";
 
 	d1 = 88;
 	printf("the result: %d\n", ft_isalnum(d1));
@@ -18,5 +20,7 @@ int	main()
 	ft_putendl_fd(dont_give_up, 1);
 	printf("you're a lucky:\n");
 	ft_putnbr_fd(7, 1);
+	printf("ft_strlen r.v: %zu\n", ft_strlcat(paris, seoul, ft_strlen(paris) + ft_strlen(seoul) + 1));
+	printf("result of ft_strlcat: %s\n", paris);
 	return (0);
 }

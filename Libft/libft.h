@@ -9,6 +9,7 @@ int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int	ft_strlen(char *str);
 char	*ft_strdup(char *src);
+size_t	ft_strlcat(char *dest, char *src, size_t dest_size);
 
 /**addtional function*/
 void ft_putchar_fd(char c, int fd);
