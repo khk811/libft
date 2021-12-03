@@ -1,15 +1,12 @@
 #include "libft.h"
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	while (*s)
 	{
-		if (str[i] == c)
-			return (&str[i]);
-		i++;
+		if (*s == c)
+			return (s);
+		s++;
 	}
-	return (&str[i]);
+	return (NULL);
 }

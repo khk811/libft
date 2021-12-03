@@ -1,6 +1,6 @@
-int	ft_toupper(char c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c -= 32;
-	return ((int)c);
+	return (c);
 }
