@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int	ft_isspace(char c)
 {
@@ -9,23 +10,24 @@ int	ft_isspace(char c)
 
 int	ft_atoi(char *str)
 {
-	int	i;
 	int	count_minus;
 	int	result;
 
-	i = 0;
 	count_minus = 1;
 	result = 0;
 
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
+	while (ft_isspace(*str) || *str == '+')
+		str++;
+	if (*str == '-')
+	{
 		count_minus = -1;
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+		str++;
+	}
+	while (*str && *str >= '0' && *str <= '9')
 	{
 		result *= 10;
-		result += str[i] - '0';
-		i++;
+		result += *str - '0';
+		str++;
 	}
 	result *= count_minus;
 	return (result);
@@ -35,7 +37,8 @@ int	main()
 {
 	char	*str;
 
-	str = " 0123";
+	str = "    -0123";
+	printf("atoi result: %d\n", atoi(str));
 	printf("ft_atoi result: %d\n", ft_atoi(str));
 	return (0);
 }

@@ -3,9 +3,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	// dst == src -> in this case, handling exception is nessesaire.
-	// overlapping may occur in this case.
-	
+	//what's the diff. w/memmove and memcpy??
 }
 
 int	main()

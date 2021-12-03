@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(char *str, char *to_find, size_t len)
 {
 	size_t	i;
 	int	j;
 
 	i = 0;
-	if (!needle)
-		return ((char *)haystack);
+	if (to_find[0] == '\0')
+		return (str);
 	while (i <= len)
 	{
 		j = 0;
-		if (haystack[i] == needle[j])
+		if (str[i] == to_find[j])
 		{
-			while (haystack[i + j] == needle[j])
+			while (str[i + j] == to_find[j])
 			{
-				if (!needle[j + 1])
-					return ((char *)&haystack[i]);
+				if (to_find[j + 1] == '\0')
+					return (&str[i]);
 				j++;
 			}
 		}

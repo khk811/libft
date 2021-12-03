@@ -3,14 +3,14 @@
 
 int	ft_isprint(int c)
 {
-	if (c == 32 || (c >= 33 && c <= 126))
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }
 
 int	main()
 {
-	char	c = 'a';
+	char	c = '*';
 
 	printf("isprint result: %d\n", isprint(c));
 	printf("ft_isprint result: %d\n", ft_isprint(c));

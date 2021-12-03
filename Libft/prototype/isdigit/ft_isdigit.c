@@ -10,7 +10,7 @@ int	ft_isdigit(int c)
 
 int	main()
 {
-	int	d = 55;
+	int	d = -1;
 
 	printf("the char: %c\n", (char)d);
 	printf("isdigit result: %d\n", isdigit(d));

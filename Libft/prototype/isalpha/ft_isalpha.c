@@ -24,7 +24,7 @@ int	ft_isalpha(int c)
 
 int	main()
 {
-	int	c = 42;
+	int	c = 122;
 
 	printf("the letter: %c\n", (char)c);
 	printf("isalpha result: %d\n", isalpha(c));
