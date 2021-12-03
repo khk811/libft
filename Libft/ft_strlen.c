@@ -1,9 +1,9 @@
-int ft_strlen(char *str)
+int ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (*str++)
 		i++;
 	return (i);
 }
