@@ -7,23 +7,25 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(char *str)
 {
-	int	i;
-	int	count_minus;
+	int	sign;
 	int	result;
 
-	i = 0;
-	count_minus = 1;
+	sign = 1;
 	result = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
-		count_minus = -1;
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str && *str >= '0' && *str <= '9')
 	{
 		result *= 10;
-		result += str[i] - '0';
+		result += *str - '0';
 		i++;
 	}
-	result *= count_minus;
+	result *= sign;
 	return (result);
 }
