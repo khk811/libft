@@ -8,19 +8,18 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
-	int	sign;
+	int	count_minus;
 	int	result;
 
-	sign = 1;
+	count_minus = 1;
 	result = 0;
-	while (ft_isspace(*str))
+	while (ft_isspace(*str) || *str == '+')
 		str++;
-	if (*str == '+' || *str == '-')
+	if (*str == '-')
 	{
-		if (*str == '-')
-			sign = -1;
+		count_minus = -1;
 		str++;
 	}
 	while (*str && *str >= '0' && *str <= '9')
@@ -29,7 +28,7 @@ int	ft_atoi(const char *str)
 		result += *str - '0';
 		str++;
 	}
-	result *= sign;
+	result *= count_minus;
 	return (result);
 }
 
@@ -37,7 +36,7 @@ int	main()
 {
 	char	*str;
 
-	str = "666647483648";
+	str = "    ++-0123";
 	printf("atoi result: %d\n", atoi(str));
 	printf("ft_atoi result: %d\n", ft_atoi(str));
 	return (0);
