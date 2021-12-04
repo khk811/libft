@@ -1,8 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "libft.h"
 
-int	ft_count_words(const char *s, char c)
+size_t	ft_strlen(const char *s)
+{
+    size_t	i;
+
+    i = 0;
+    while (s[i])
+        i++;
+    return (i);
+}
+
+size_t  ft_strlcpy(char *dest, char *src, size_t dest_size)
+{
+    size_t  i;
+    size_t  src_len;
+
+    src_len = ft_strlen(src);
+    i = 0;
+    while (src[i] != '\0' && i + 1 < dest_size)
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    if (dest_size > 0)
+        dest[i] = '\0';
+    return (src_len);
+}
+
+static int	ft_count_words(const char *s, char c)
 {
 	int	word_num;
 
@@ -21,7 +47,9 @@ char **ft_split(const char *s, char c)
 {
 	char	**result;
 	int	the_word_num;
-	//int	the_char_num;
+	size_t	the_char_num;
+	char	*start_of_the_word;
+	int	i;
 
 	if (!s)
 		return (NULL);
@@ -30,26 +58,33 @@ char **ft_split(const char *s, char c)
 	if (!result)
 		return (NULL);
 	printf("total words: %d\n", the_word_num);
-	/*
-	//2. character count in a word - loop
+	start_of_the_word = (char *)s;
+	i = 0;
+	the_char_num = 0;
 	while (*s)
 	{
-		//strlcpy
 		if (*s == c)
 		{
 			result[i] = (char*)malloc(sizeof(char) * (the_char_num + 1));
-			ft_strlcpy(result[i], s, the_char_num);
+			ft_strlcpy(result[i++], start_of_the_word, the_char_num);
+			start_of_the_word = (char *)(s + 1);
+			the_char_num = 0;
 		}
 		s++;
 		the_char_num++;
-	}*/
+	}
 	return (result);
 }
 
 int	main()
 {
-	char	*test = "this*is*a*sample*string.";
+	char	*input_str = "this*is*a*sample*string.";
+	char	**result;
+	int	i;
 
-	ft_split(test, '*');
+	result = ft_split(input_str, '*');
+	i = 0;
+	while (result[i])
+		printf("%s\n", result[i++]);
 	return (0);
 }
