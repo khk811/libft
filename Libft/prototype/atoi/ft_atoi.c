@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' || c == ' ')
 		return (1);
@@ -15,7 +15,6 @@ int	ft_atoi(char *str)
 
 	count_minus = 1;
 	result = 0;
-
 	while (ft_isspace(*str) || *str == '+')
 		str++;
 	if (*str == '-')
@@ -37,7 +36,7 @@ int	main()
 {
 	char	*str;
 
-	str = "    -0123";
+	str = "    ++-0123";
 	printf("atoi result: %d\n", atoi(str));
 	printf("ft_atoi result: %d\n", ft_atoi(str));
 	return (0);

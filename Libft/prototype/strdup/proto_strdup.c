@@ -1,28 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_strlen(const char *s)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(char *src)
 {
 	char	*result;
-	 int	i;
+	int	src_len;
+	int	i;
 
 	i = 0;
-	result = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!result)
+	src_len = ft_strlen(src);
+	result = (char *)malloc(sizeof(char) * (src_len + 1));
+	if (result == NULL)
 		return (NULL);
-	while (s1[i])
+	while (src[i] != '\0')
 	{
-		result[i] = s1[i];
+		result[i] = src[i];
 		i++;
 	}
 	result[i] = '\0';
