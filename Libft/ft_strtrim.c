@@ -16,6 +16,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	{
 		if (!ft_strchr(s1, set[i]))
 			len++;
+		i++;
 	}
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
