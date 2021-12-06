@@ -1,32 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-    size_t	i;
-
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
-}
-
-size_t  ft_strlcpy(char *dest, char *src, size_t dest_size)
-{
-    size_t  i;
-    size_t  src_len;
-
-    src_len = ft_strlen(src);
-    i = 0;
-    while (src[i] != '\0' && i + 1 < dest_size)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    if (dest_size > 0)
-        dest[i] = '\0';
-    return (src_len);
-}
+#include "libft.h"
 
 static int	ft_count_words(const char *s, char c)
 {
@@ -81,17 +54,4 @@ char **ft_split(const char *s, char c)
 		return (NULL);
 	ft_assign_words(s, c, result);
 	return (result);
-}
-
-int	main()
-{
-	char	*input_str = "this*is*a*sample*string.";
-	char	**result;
-	int	i;
-
-	result = ft_split(input_str, '*');
-	i = 0;
-	while (result[i])
-		printf("%s\n", result[i++]);
-	return (0);
 }
