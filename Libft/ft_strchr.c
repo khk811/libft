@@ -6,7 +6,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		while (*s)
 			s++;
-		return (s);
+		return ((char *)s);
 	}
 	while (*s)
 	{
