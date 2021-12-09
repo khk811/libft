@@ -9,12 +9,12 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		while (*s)
 			s++;
-		return (s);
+		return ((char *)s);
 	}
 	while (*s)
 	{
 		if (*s == c)
-			result = s;
+			result = (char *)s;
 		s++;
 	}
 	return (result);
