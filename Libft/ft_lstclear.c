@@ -12,4 +12,5 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
     lst_element = lst_element->next;
     free(lst_element);
   }
+  lst = NULL;
 }
