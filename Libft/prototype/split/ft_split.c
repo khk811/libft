@@ -45,6 +45,8 @@ static char	**ft_assign_words(const char *s, char c, char **arr)
                 return (NULL);
             strlcpy(arr[i++], start_of_the_word, (char_num + 1));
             char_num = 0;
+            if (!*s)
+                break;
         }
         s++;
     }
@@ -73,18 +75,11 @@ char **ft_split(const char *s, char c)
 
 int main()
 {
-  char *string = "      split       this for   me  !       ";
-  char **expected = ((char*[6]){"split", "this", "for", "me", "!", ((void *)0)});
+  char *string = "                  olol";
   char **result = ft_split(string, ' ');
 
-  printf("----expected result----\n");
-  for (int i = 0; expected[i]; i++)
-    printf("-> %s\n", expected[i]);
   printf("----the result----\n");
   for (int j = 0; result[j]; j++)
-  {
-      printf("*");
       printf("-> %s\n", result[j]);
-  }
   return (0);
 }
