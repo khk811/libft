@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-static int	ft_count_digits(int n)
+static long	ft_count_digits(long n)
 {
-	int	result;
+	long    result;
 
 	result = 0;
 	if (n < 0)
@@ -19,10 +19,10 @@ static int	ft_count_digits(int n)
 	return (result);
 }
 
-static int	ft_make_divider(int n)
+static long	ft_make_divider(long n)
 {
 	int	i;
-	int	result;
+	long    result;
 
 	result	= 1;
 	i = ft_count_digits(n);
@@ -36,23 +36,25 @@ static int	ft_make_divider(int n)
 char *ft_itoa(int n)
 {
 	char	*result;
-	 int	the_divider;
 	 int	i;
+	long    the_divider;
+    long    long_n;
 	
 	i = 0;
-	the_divider = ft_make_divider(n);
-	result = (char *)malloc(sizeof(char) * (ft_count_digits(n) + 1));
+    long_n = (long)n;
+	the_divider = ft_make_divider(long_n);
+	result = (char *)malloc(sizeof(char) * (ft_count_digits(long_n) + 1));
 	if (!result)
 		return (NULL);
-	if (n < 0)
+	if (long_n < 0)
 	{
 		result[i++] = '-';
-		n *= -1;
+		long_n *= -1;
 	}
 	while (the_divider > 0)
 	{
-		result[i++] = (n / the_divider) + '0';
-		n %= the_divider;
+		result[i++] = (long_n / the_divider) + '0';
+		long_n %= the_divider;
 		the_divider /= 10;
 	}
 	result[i] = '\0';
