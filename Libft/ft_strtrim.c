@@ -22,7 +22,6 @@ static int  ft_trim_len(char const *s1, char const *set)
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
 	int	len;
 	char *result;
 
@@ -32,14 +31,13 @@ char *ft_strtrim(char const *s1, char const *set)
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
-	i = 0;
 	while (*s1)
 	{
-      if (ft_strchr(set, s1[i]))
-        i++;
+      if (ft_strchr(set, *s1))
+        s1++;
       else
        {
-         ft_strlcpy(result, s1 + i, (len + 1));
+         ft_strlcpy(result, s1, (len + 1));
          break ;
        }
     }
