@@ -2,6 +2,25 @@
 #include <string.h>
 #include <stdio.h>
 
+static int  ft_trim_len(char const *s1, char const *set)
+{
+  int   i;
+  int   result;
+
+  i = 0;
+  result = (int)strlen(s1);
+  while (strchr(set, s1[i++]))
+  {
+    if (!result)
+      return (0);
+    result--;
+  }
+  i = (int)strlen(s1);
+  while (strchr(set, s1[--i]))
+    result--;
+  return (result);
+}
+
 char *ft_strtrim(char const *s1, char const *set)
 {
 	int	i;
@@ -10,56 +29,36 @@ char *ft_strtrim(char const *s1, char const *set)
 
 	if (!set)
 		return (strdup((char *)s1));
-	i = 0;
-	len = (int)strlen(s1);
-	while (strchr(set, s1[i]))
-	{	
-		printf("** %c\n", s1[i]);
-		len--;
-		i++;
-	}
-	printf("here-> %c\n", s1[i]);
-	i = (int)strlen(s1) + 1;
-	while (strchr(set, s1[i]))
-	{
-		printf("del -> %c\n", s1[i--]);
-		len--;
-		printf("len: %d\n", len);
-	}
-	printf("here-> %c\n", s1[i]);
-	printf("len: %d\n", len);
+    len = ft_trim_len(s1, set);
+    printf("the len: %d\n", len);
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
-		return (NULL);
+    {
+      printf("can't allocate\n");
+      return (NULL);
+    }
 	i = 0;
 	while (*s1)
 	{
-		if (strchr(set, s1[i]))
-			i++;
-		else
-		{
-			strlcpy(result, s1 + i, (len + 1));
-			printf("here-> %s\n", result);
-			break;
-		}
-	}
+      if (strchr(set, s1[i]))
+        i++;
+      else
+       {
+         strlcpy(result, s1 + i, (len + 1));
+         break ;
+       }
+    }
 	return (result);
 }
 
-int	main()
+int main()
 {
-	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-	char *s2 = "Hello \t  Please\n Trim me !";
-	char *ret = ft_strtrim(s1, " \n\t");
+  char *s1 = "  \t \t \n   \n\n\n\t";
+  char *s2 = "";
+  char *ret = ft_strtrim(s1, " \n\t");
 
-	printf("original len: %lu\n", strlen(s1));
-	puts("expected result\n");
-	puts(s2);
-	printf("expected len: %lu\n", strlen(s2));
-	puts("-------\n");
-	puts("the result\n");
-	puts(ret);
-	printf("result len: %lu\n", strlen(ret));
-	puts("end of test\n");
-	return (0);
+  printf("the result: %s\n", ret);
+  printf("-----\n");
+  printf("expected result: %s\n", s2);
+  return (0);
 }
