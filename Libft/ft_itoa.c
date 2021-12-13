@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/13 13:39:32 by hyunkkim          #+#    #+#             */
+/*   Updated: 2021/12/13 13:39:34 by hyunkkim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 static long	ft_count_digits(long n)
 {
-	long    result;
+	long	result;
 
 	result = 0;
 	if (n < 0)
@@ -21,10 +33,10 @@ static long	ft_count_digits(long n)
 
 static long	ft_make_divider(long n)
 {
-	int	i;
-	long    result;
+	 int	i;
+	long	result;
 
-	result	= 1;
+	result = 1;
 	i = ft_count_digits(n);
 	if (n < 0)
 		i--;
@@ -33,15 +45,15 @@ static long	ft_make_divider(long n)
 	return (result);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*result;
 	 int	i;
-	long    the_divider;
-    long    long_n;
-	
+	long	the_divider;
+	long	long_n;
+
 	i = 0;
-    long_n = (long)n;
+	long_n = (long)n;
 	the_divider = ft_make_divider(long_n);
 	result = (char *)malloc(sizeof(char) * (ft_count_digits(long_n) + 1));
 	if (!result)

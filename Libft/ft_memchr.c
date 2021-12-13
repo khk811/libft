@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/13 13:51:25 by hyunkkim          #+#    #+#             */
+/*   Updated: 2021/12/13 13:51:39 by hyunkkim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	casted_c;
 	unsigned char	*casted_s;
-	size_t	i;
+	       size_t	i;
 
 	casted_c = (unsigned char)c;
 	casted_s = (unsigned char *)s;
