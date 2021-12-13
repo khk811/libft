@@ -27,7 +27,7 @@ int	ft_atoi(const char *str)
 	{
 		result *= 10;
 		result += *str - '0';
-        printf("result in progress : %d\n", result);
+        //printf("result in progress : %d\n", result);
 		str++;
 	}
 	result *= sign;
@@ -38,7 +38,7 @@ int	main()
 {
 	char	*str;
 
-	str = "-9223372036854775810";
+	str = "999999999999999999999999999999999999007";
 	printf("atoi result: %d\n", atoi(str));
 	printf("ft_atoi result: %d\n", ft_atoi(str));
 	return (0);
