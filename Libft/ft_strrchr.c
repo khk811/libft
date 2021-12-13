@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:14:42 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 14:14:44 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/13 16:27:28 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*result;
+	char	char_c;
 
 	result = NULL;
-	if (!c)
+	char_c = (char)c;
+	if (!char_c)
 	{
 		while (*s)
 			s++;
@@ -25,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == char_c)
 			result = (char *)s;
 		s++;
 	}
