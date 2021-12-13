@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:27:52 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 14:27:54 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/13 19:08:16 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!set)
 		return (ft_strdup((char *)s1));
+	if (!s1)
+		return (NULL);
 	len = ft_trim_len(s1, set);
+	if (!len)
+		return ((char *)ft_calloc(sizeof(char), 1));
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
