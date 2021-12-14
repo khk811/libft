@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:28:22 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 17:06:09 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:28:51 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*result;
 
+	if (!s)
+		return (NULL);
 	if (ft_strlen(s + start) <= len)
 		len = ft_strlen(s + start);
 	result = (char *)malloc(sizeof(char) * (len + 1));
