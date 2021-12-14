@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:19:19 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/14 19:52:23 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:06:52 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	i = 0;
-	if (dst_len > dstsize)
+	if (dst_len + 1 > dstsize)
 		return (src_len + dstsize);
 	while (*dst)
 		dst++;
