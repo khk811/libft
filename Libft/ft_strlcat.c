@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:19:19 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 18:00:44 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:52:23 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	src_len_to_add;
-	int	idx_dst;
-	int	idx_src;
-	int	normal_return;
+	size_t	src_len;
+	size_t	dst_len;
+	size_t	i;
 
-	src_len_to_add = (int)(dstsize - ft_strlen(dst)) - 1;
-	idx_dst = ft_strlen(dst);
-	idx_src = 0;
-	normal_return = (int)(ft_strlen(dst) + ft_strlen(src));
-	if (src_len_to_add < 0)
-		return (ft_strlen(src) + dstsize);
-	while (src[idx_src] != '\0' && src_len_to_add > 0)
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	i = 0;
+	if (dst_len > dstsize)
+		return (src_len + dstsize);
+	while (*dst)
+		dst++;
+	while (*src && dst_len + i + 1 < dstsize)
 	{
-		dst[idx_dst++] = src[idx_src++];
-		src_len_to_add--;
+		*dst = *src;
+		dst++;
+		src++;
+		i++;
 	}
-	dst[idx_dst] = '\0';
-	return (normal_return);
+	*dst = '\0';
+	return (dst_len + src_len);
 }
