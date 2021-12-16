@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:29 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 14:13:34 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/16 14:54:32 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,34 @@ static int	ft_count_words(const char *s, char c)
 	return (word_num);
 }
 
+static char	**ft_free_heap(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		free(s[i++]);
+	free(s);
+	return (NULL);
+}
+
 static char	**ft_assign_words(const char *s, char c, char **arr)
 {
 	 int	i;
-	size_t	the_char_num;
-	char	*start_of_the_word;
+	char	*word_start;
 
 	i = 0;
-	the_char_num = 0;
 	while (*s)
 	{
 		if (*s && *s != c)
 		{
-			start_of_the_word = (char *)s;
+			word_start = (char *)s;
 			while (*s && *s != c)
-			{
-				the_char_num++;
 				s++;
-			}
-			arr[i] = (char *)malloc(sizeof(char) * (the_char_num + 1));
+			arr[i] = (char *)malloc(sizeof(char) * ((s - word_start) + 1));
 			if (!arr[i])
-				return (NULL);
-			ft_strlcpy(arr[i++], start_of_the_word, (the_char_num + 1));
-			the_char_num = 0;
+				return (ft_free_heap(arr));
+			ft_strlcpy(arr[i++], word_start, ((s - word_start) + 1));
 			if (!*s)
 				break ;
 		}
@@ -76,6 +81,7 @@ char	**ft_split(const char *s, char c)
 	result = (char **)malloc(sizeof(char *) * (the_word_num + 1));
 	if (!result)
 		return (NULL);
-	ft_assign_words(s, c, result);
+	if (!ft_assign_words(s, c, result))
+		return (NULL);
 	return (result);
 }
