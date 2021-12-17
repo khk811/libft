@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:51:25 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 13:51:39 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:43:37 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	casted_c;
-	unsigned char	*casted_s;
+	unsigned char	uc_c;
+	unsigned char	*uc_s;
 	       size_t	i;
 
-	casted_c = (unsigned char)c;
-	casted_s = (unsigned char *)s;
+	uc_c = (unsigned char)c;
+	uc_s = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		if (*casted_s == casted_c)
-			return ((void *)casted_s);
+		if (*uc_s == uc_c)
+			return ((void *)uc_s);
 		i++;
-		casted_s++;
+		uc_s++;
 	}
 	return (NULL);
 }
