@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:41:23 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/17 14:41:55 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/17 16:09:13 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_list {
 	        void	*content;
