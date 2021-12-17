@@ -6,9 +6,11 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:35:52 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 13:35:58 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:01:31 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_isupper(int c)
 {
