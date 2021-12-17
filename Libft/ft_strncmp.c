@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:24:47 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/17 15:34:03 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:54:09 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while ((uc_s1[i] || uc_s2[i]) && i < n)
 	{
 		if (uc_s1[i] != uc_s2[i])
-			return (uc_s1[i] - uc_s2[i]);
+			return ((int)(uc_s1[i] - uc_s2[i]));
 		i++;
 	}
 	return (0);
