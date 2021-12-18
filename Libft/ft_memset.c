@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:54:20 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 13:54:24 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:09:36 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	i = 0;
 	while (i < len)
-		*(unsigned char *)(b + (i++)) = c;
+		*(unsigned char *)(b + (i++)) = (unsigned char)c;
 	return (b);
 }

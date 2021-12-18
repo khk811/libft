@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:53:47 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 13:53:48 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:10:27 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (len-- > 0)
 			*(unsigned char *)(dst + len) = *(unsigned char *)(src + len);
 	}
-	return (dst);
+	return ((void *)dst);
 }

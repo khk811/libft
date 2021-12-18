@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:53:25 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 13:53:26 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:10:12 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 		i++;
 	}
-	return (dst);
+	return ((void *)dst);
 }
