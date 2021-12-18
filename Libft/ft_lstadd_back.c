@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:40:31 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/15 15:37:25 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:49:48 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	if (!*(lst))
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
