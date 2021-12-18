@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:18:54 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/18 13:07:26 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:12:11 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!result)
 		return (NULL);
 	ft_strlcpy(result, (char *)s1, ft_strlen(s1) + 1);
-	ft_strlcat(result, (char *)s2, ft_strlen(s2) + ft_strlen(ret) + 1);
+	ft_strlcat(result, (char *)s2, ft_strlen(s2) + ft_strlen(result) + 1);
 	return (result);
 }
