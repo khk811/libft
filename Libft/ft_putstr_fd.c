@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:56:56 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 13:56:58 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:59:17 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	ft_putstr_fd(char *s, int fd)
 	if (!s || fd < 0)
 		return ;
 	while (*s)
-		ft_putchar_fd(*s++, fd);
+		ft_putchar_fd(*(s++), fd);
 }
