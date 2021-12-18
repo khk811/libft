@@ -6,11 +6,11 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:39:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 13:39:34 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:22:15 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static long	ft_count_digits(long n)
 {
@@ -31,7 +31,7 @@ static long	ft_count_digits(long n)
 	return (result);
 }
 
-static long	ft_make_divider(long n)
+static long	ft_make_divisor(long n)
 {
 	 int	i;
 	long	result;
@@ -49,12 +49,12 @@ char	*ft_itoa(int n)
 {
 	char	*result;
 	 int	i;
-	long	the_divider;
+	long	divisor;
 	long	long_n;
 
 	i = 0;
 	long_n = (long)n;
-	the_divider = ft_make_divider(long_n);
+	divisor = ft_make_divisor(long_n);
 	result = (char *)malloc(sizeof(char) * (ft_count_digits(long_n) + 1));
 	if (!result)
 		return (NULL);
@@ -63,11 +63,11 @@ char	*ft_itoa(int n)
 		result[i++] = '-';
 		long_n *= -1;
 	}
-	while (the_divider > 0)
+	while (divisor > 0)
 	{
-		result[i++] = (long_n / the_divider) + '0';
-		long_n %= the_divider;
-		the_divider /= 10;
+		result[i++] = (long_n / divisor) + '0';
+		long_n %= divisor;
+		divisor /= 10;
 	}
 	result[i] = '\0';
 	return (result);

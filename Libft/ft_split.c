@@ -6,11 +6,10 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:29 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/16 14:54:32 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:18:19 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_count_words(const char *s, char c)

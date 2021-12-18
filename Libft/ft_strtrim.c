@@ -6,11 +6,10 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:27:52 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/13 19:08:16 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:17:50 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_trim_len(char const *s1, char const *set)

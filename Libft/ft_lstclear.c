@@ -6,11 +6,10 @@
 /*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 21:23:07 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/15 16:42:23 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 13:26:15 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
