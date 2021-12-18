@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:29 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/18 13:18:19 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2021/12/18 14:03:08 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static char	**ft_free_heap(char **s)
 	while (s[i])
 		free(s[i++]);
 	free(s);
+	s = NULL;
 	return (NULL);
 }
 
